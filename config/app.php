@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'VKBot'),
 
     /*
     |--------------------------------------------------------------------------
@@ -121,7 +121,7 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => env('APP_LOG', 'daily'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
@@ -167,7 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
         /*
          * Application Service Providers...
          */
