@@ -5,7 +5,7 @@ namespace App\Http\Api;
 
 use Illuminate\Support\Facades\Log;
 
-define('YANDEX_API_ENDPOINT', 'https://tts.voicetech.yandex.net/generate');
+
 
 class YandexApi
 {
@@ -25,7 +25,7 @@ class YandexApi
             'emotion' => 'good',
             'text' => $text,
         ));
-        $url = YANDEX_API_ENDPOINT . '?' . $query;
+        $url = env('YANDEX_API_ENDPOINT') . '?' . $query;
         $curl_handler = curl_init($url);
         curl_setopt($curl_handler, CURLOPT_FILE, $file_handler);
         curl_exec($curl_handler);

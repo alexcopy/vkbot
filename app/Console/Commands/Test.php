@@ -3,6 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Exceptions\VKException;
+use App\Http\Api\VkApi;
+use App\Http\Bot\VkBotIndex;
 use App\Http\Services\VKOAuth;
 use Illuminate\Console\Command;
 
@@ -39,6 +41,11 @@ class Test extends Command
      */
     public function handle()
     {
+
+        (new VkApi)->vkApi_usersGet('151822507');
+
+        exit;
+
         $vk = new  VKOAuth('{APP_ID}', '{SECRET}');
         $currentUrl = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'];
         dd($currentUrl);
